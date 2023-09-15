@@ -2,21 +2,316 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Inter", sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
 }
 
-a {
-  color: #84309c;
-  text-decoration: none;
+
+div[disabled=disabled] {
+    pointer-events: none;
+    opacity: 0.4;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  color: #e7e8e8;
-  background: #070707;
+    color: black;
+    background-color: whitesmoke;
+}
+
+/* index page css */
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-1 {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+;
+
+.box-1 #image {
+    width: 30%;
+}
+
+.box-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-2-1 {
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+
+/*css for navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 15px;
+    color: white;
+
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.description{
+    width: 80%;
+    margin : 3% auto;
+    text-align: left;
+}
+
+.description h1{
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #007bff;
+}
+.description p{
+    font-size: 17px;
+}
+
+
+
+
+/*forms css*/
+.complaint-form {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.complaint-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/* css for Status Page */
+
+
+/* Initial styling for the hidden card , css for status page.. */
+
+.status {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.status h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.status label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.status input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.status button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.status button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.status-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    background-color: grey;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Styling for the card content */
+.status-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.status-card p {
+    margin: 5px 0;
+}
+
+.status-card p:first-child {
+    font-weight: bold;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Styling for the overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Semi-transparent black overlay */
+    z-index: 2000;
+    /* Ensure the overlay appears above other content */
+}
+
+/* Show the card and overlay when active */
+.status-card.active,
+.overlay.active {
+    display: block;
+}
+
+
+
+
+
+/* Css for Admin Page */
+
+/* Styles for the outer 'admin' container */
+.admin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.admin h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+/* Styles for the 'approve' and 'resolve' containers */
+.approve,
+.resolve {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    width: 40%;
+}
+
+/* Styles for the 'btns' container within each section */
+.btns {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
