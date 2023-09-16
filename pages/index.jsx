@@ -26,7 +26,7 @@ const Home = () => {
       <Header />
       <div className="box-1">
         <Complaint />
-        <div style={{ width: "50%" }}><Image id="image" src={require('../public/images/1st.gif')} alt="my gif" /></div>
+        <div style={{ width: "50%" }}><Image id="image" src={firstGif} alt="my gif" /></div>
       </div>
 
 
