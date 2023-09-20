@@ -5,8 +5,10 @@ import Header from "./components/Header";
 import Head from "next/head";
 import Complaint from "./components/Complaint";
 import Status from "./components/Status";
-import firstGif from "../public/images/1st.gif"
+import firstGif from "../public/1st.gif"
+import statusImg from "../public/status.svg"
 import Admin from "./components/Admin"
+import ImageSlider from "./components/ImageSlider.jsx";
 import { useContract, useContractWrite, useContractRead } from '@thirdweb-dev/react';
 
 const Home = () => {
@@ -21,28 +23,42 @@ const Home = () => {
         <title>Police_Complaint_Dapp</title>
         <meta name="description" content="This is a Dapp for filling conplaint using WEB3.0" />
         <link rel="stylesheet" href="/styles/global.css" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <meta name="viewport" content="viewport-fit=cover" />
       </Head>
+
+
+
+      <ImageSlider />
+
+
+
       <Header />
+
+
+
       <div className="box-1">
         <Complaint />
-        <div style={{ width: "50%" }}><Image id="image" src={firstGif} alt="my gif" /></div>
+        <div style={{ width: "50%" }}><Image id="image" src={firstGif} alt="my gif" priority /></div>
       </div>
 
 
       <div className="box-2">
         <div className="box-2-1">
-          <h1 style={{fontSize : "23px" , fontWeight : "bold"}}>Check Your Complaint Status</h1>
-          <p>Write your Valid ID! and Check for your status.</p>
+          <Image src={statusImg} alt="statusImage" priority/>
         </div>
         <Status />
       </div>
+
+
+
 
       {address === officer && <Admin />}
 
       <div style={{backgroundColor : "#007bff" , padding : "15px" , textAlign : "center" , fontWeight : "bold" , marginTop : "20px" , color : "white"}}>
         <p>@copyright 2023 By Vishvamitra</p>
       </div>
+
+
 
     </div>
 

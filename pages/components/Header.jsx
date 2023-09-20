@@ -18,10 +18,6 @@ function Header() {
                     />
                 </div>
             </div>
-            <div className="description">
-                <h1>Register Your Complaint with Web3.0.</h1>
-                <p> It is an application where users can file their complaints without the interference of third parties. It provides a more authentic and democratic approach where anyone can view the progress and remarks made by the police on a particular case.</p>
-            </div>
         </div>
 
     )
