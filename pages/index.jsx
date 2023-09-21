@@ -16,7 +16,6 @@ const Home = () => {
   const address = useAddress();
   const { contract } = useContract("0x2124B3a2dBf56B9b5c4C8B9062670C2c9f16d461");
   const { data: officer } = useContractRead(contract, "officer");
-
   return (
     <div className="box">
       <Head>
@@ -35,10 +34,9 @@ const Home = () => {
       <Header />
 
 
-
       <div className="box-1">
         <Complaint />
-        <div style={{ width: "50%" }}><Image id="image" src={firstGif} alt="my gif" priority /></div>
+        <div style={{ width: "50%" }}><Image id="image" src={firstGif} alt="my gif" unoptimized={true} priority /></div>
       </div>
 
 
@@ -52,7 +50,7 @@ const Home = () => {
 
 
 
-      {address === officer && <Admin />}
+      {(!address || address === officer) && <Admin />}
 
       <div style={{backgroundColor : "#007bff" , padding : "15px" , textAlign : "center" , fontWeight : "bold" , marginTop : "20px" , color : "white"}}>
         <p>@copyright 2023 By Vishvamitra</p>
